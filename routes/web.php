@@ -19,10 +19,12 @@ Route::get('/', function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'HomeController@getIndex')->name('adminHome');
+
+    Route::group(['as' => 'countries.', 'prefix' => 'countries', 'namespace' => 'Countries'], function () {
+        Route::get('/', 'CountriesController@getIndex')->name('countries');
+    });
+
 });
