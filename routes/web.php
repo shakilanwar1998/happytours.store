@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (){
     return view('home');
 });
+Route::get('/place', function (){
+    return view('layouts.places');
+});
+
 
 Auth::routes();
 
