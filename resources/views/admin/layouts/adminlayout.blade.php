@@ -7,7 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-freel.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.css')}}">
   <!-- Ionicons -->
   <!-- Tempusdominus Bbootstrap 4 -->
   <!-- Theme style -->
