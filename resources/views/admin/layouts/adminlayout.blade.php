@@ -113,5 +113,6 @@
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('dist/js/adminlte.js')}}"></script>
+<script src="{{asset('dist/js/admin_custom.js')}}"></script>
 </body>
 </html>

@@ -10,7 +10,10 @@ class CountriesController extends CRUD
       $this->data['page_title'] = "Countries";
       $this->data['table_columns'] = ['Country Name' => 'name'];
 
-      $this->form_data = [];
-      $this->form_data[] = ["label" => "Country Name", "name" => "name", "type" => "text", "required" => true];
+      $this->form = [];
+      $this->form[] = ["label" => "Country Name", "name" => "name", "type" => "text", "required" => true];
+      // $this->form[] = ["label" => "Description", "name" => "desc", "type" => "textarea", "required" => true];
+      // $this->form[] = ["label" => "Image", "name" => "image", "type" => "upload", "required" => true];
+      // $this->form[] = ["label" => "Image", "name" => "image", "type" => "select", "required" => true];
     }
 }

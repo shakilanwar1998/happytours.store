@@ -6,7 +6,7 @@
       <div class="card-body">
           <form action="{{url()->current().'/save/'}}" method="post" enctype="multipart/form-data">
             @csrf
-              @foreach($form_data as $key => $data)
+              @foreach($form as $key => $data)
                 @if(in_array($data['type'],['text','email','number']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
