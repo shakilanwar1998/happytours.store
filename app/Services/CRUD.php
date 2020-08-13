@@ -11,6 +11,11 @@ class CRUD extends Controller
     public $model;
     public $form = [];
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getIndex(){
       $this->init();
       $this->data['results'] = $this->model->all();

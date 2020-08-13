@@ -36,4 +36,13 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], fu
         Route::post('/edit/{id}/save', 'CountriesController@update')->name('countriesEditSave');
     });
 
+    Route::group(['as' => 'places.', 'prefix' => 'places', 'namespace' => 'Places'], function () {
+        Route::get('/', 'PlacesController@getIndex')->name('places');
+        Route::get('/add', 'PlacesController@getAdd')->name('placesAdd');
+        Route::get('/edit/{id}', 'PlacesController@getEdit')->name('placesEdit');
+        Route::get('/delete/{id}', 'PlacesController@getDelete')->name('placesDelete');
+        Route::post('/add/save', 'PlacesController@create')->name('placesAddSave');
+        Route::post('/edit/{id}/save', 'PlacesController@update')->name('placesEditSave');
+    });
+
 });
