@@ -19,30 +19,6 @@
               </div>
            </div>
 
-           <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your city">
-              <div>
-                  <input class="input100" id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city"
-                  value="{{ old('city') }}" required autocomplete="city" placeholder="City" autofocus >
-                  @error('name')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
-           </div>
-
-           <div class="wrap-input100 validate-input m-b-16" data-validate="Please select your country_code">
-              <div>
-                  <input class="input100" id="country_code" type="number" class="form-control @error('country_code') is-invalid @enderror" name="country_code"
-                  value="{{ old('country_code') }}" required autocomplete="country_code" placeholder="Country Code" autofocus >
-                  @error('name')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
-           </div>
-
 
            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email: ex@abc.xyz">
               <div>
