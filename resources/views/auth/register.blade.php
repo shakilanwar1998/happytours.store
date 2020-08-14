@@ -19,7 +19,6 @@
               </div>
            </div>
 
-
            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email: ex@abc.xyz">
               <div>
                   <input class="input100" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
