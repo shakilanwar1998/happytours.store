@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('index/css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('index/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('index/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('index/css/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('index/css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('index/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('index/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('index/css/bootstrap-datepicker.css') }}">
@@ -24,19 +24,19 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="#">Happytours.store</a>
+      <a class="navbar-brand" href="#">Happytours</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+          {{-- <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
           <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
           <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> --}}
           <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -68,7 +68,6 @@
                             </li>
                         @endguest
                     </ul>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
 
         </ul>
       </div>
@@ -133,7 +132,7 @@
       <div class="row">
         <div class="col-md-12 text-center">
 
-          
+
         </div>
       </div>
     </div>
@@ -157,10 +156,10 @@
 <script src="{{ asset('index/js/aos.js') }}"></script>
 <script src="{{ asset('index/js/jquery.animateNumber.min.js') }}"></script>
 <script src="{{ asset('index/js/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('index/js/jquery.timepicker.min.js') }}"></script>
+{{-- <script src="{{ asset('index/js/jquery.timepicker.min.js') }}"></script> --}}
 <script src="{{ asset('index/js/scrollax.min.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{ asset('index/js/google-map.js') }}"></script>
+
+{{-- <script src="{{ asset('index/js/google-map.js') }}"></script> --}}
 <script src="{{ asset('index/js/main.js') }}"></script>
 
 </body>
