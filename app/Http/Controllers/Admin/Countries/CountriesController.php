@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Countries;
 use App\Services\CRUD;
-use App\Models\Admin\Country;
+use App\Models\Country;
 class CountriesController extends CRUD
 {
     public function init(){
@@ -12,8 +12,7 @@ class CountriesController extends CRUD
 
       $this->form = [];
       $this->form[] = ["label" => "Country Name", "name" => "name", "type" => "text", "required" => true];
-      // $this->form[] = ["label" => "Description", "name" => "desc", "type" => "textarea", "required" => true];
-      // $this->form[] = ["label" => "Image", "name" => "image", "type" => "upload", "required" => true];
-      // $this->form[] = ["label" => "Image", "name" => "image", "type" => "select", "required" => true];
+      $this->form[] = ["label" => "Latitude", "name" => "lat", "type" => "text", "required" => true];
+      $this->form[] = ["label" => "Longitude", "name" => "long", "type" => "text", "required" => true];
     }
 }
