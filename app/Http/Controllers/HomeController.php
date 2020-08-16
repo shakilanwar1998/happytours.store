@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+  /*  public function __construct()
     {
         $this->middleware('auth');
     }
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       $data = DB::table('cities')
+                      ->join('places','city_id','=','cities.id')
+                      ->select('cities.name as city_name', 'places.name as place_name')
+                      ->get();
+        return view('home',compact('data'));
+
+
     }
 }
