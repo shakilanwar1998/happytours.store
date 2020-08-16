@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use App\Models\Place;
+use App\Models\City;
 class HomeController extends Controller
 {
     /**
@@ -12,24 +13,17 @@ class HomeController extends Controller
      *
      * @return void
      */
-  /*  public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-       $data = DB::table('cities')
-                      ->join('places','city_id','=','cities.id')
-                      ->select('cities.name as city_name', 'places.name as place_name')
-                      ->get();
-        return view('home',compact('data'));
+        $data['cities'] = City::all();
+        $data['popular_places'] = Place::get()->sortBy(function($places){
+          return $places->ratings();
+        })->take(5);
 
-
+        foreach($data['popular_places'] as $key => $value)
+        {
+          $data['popular_places'][$key] = Place::find($value->id);
+        }
+        return view('home',$data);
     }
 }

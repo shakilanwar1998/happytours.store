@@ -45,3 +45,9 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], fu
     });
 
 });
+
+
+Route::group(['as' => 'places.', 'prefix' => 'places', 'namespace' => 'Frontend'], function () {
+    Route::get('/', 'PlacesController@getIndex')->name('places');
+    Route::get('/{id}', 'PlacesController@getPlace')->name('place');
+});
