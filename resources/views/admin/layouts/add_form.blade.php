@@ -10,24 +10,31 @@
                 @if(in_array($data['type'],['text','email','number']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
-                      <input id="form_{{$data['name']}}" type="{{$data['type']}}" class="form-control" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}">
+                      <input id="form_{{$data['name']}}" type="{{$data['type']}}" class="form-control" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}" required="{{$data['required']}}">
                   </div>
                 @endif
 
                 @if(in_array($data['type'],['textarea']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
-                      <textarea id="form_{{$data['name']}}" class="form-control summernote" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}"></textarea>
+                      <textarea id="form_{{$data['name']}}" class="form-control summernote" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}" required="{{$data['required']}}"></textarea>
                   </div>
                 @endif
 
                 @if(in_array($data['type'],['file','upload']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
-                      <div class="custom-file">
-                          <input type="file" name="{{$data['name']}}" class="custom-file-input" id="form_{{$data['name']}}">
-                          <label class="custom-file-label" for="form_{{$data['name']}}">Upload {{$data['label']}}</label>
+                      <div class="file_forms">
+                        <div class="custom-file">
+                            <input type="file" name="{{$data['name']}}[]" class="custom-file-input" multiple required="{{$data['required']}}">
+                            <label class="custom-file-label" for="form_{{$data['name']}}">Upload {{$data['label']}}</label>
+                        </div>
                       </div>
+                  </div>
+                  <div class="container">
+                    <div class="file_preview">
+
+                    </div>
                   </div>
                 @endif
 
@@ -35,7 +42,7 @@
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
                       <div class="custom-file">
-                          <input type="file" name="{{$data['name']}}" class="custom-file-input" id="form_{{$data['name']}}">
+                          <input type="file" name="{{$data['name']}}" class="custom-file-input" id="form_{{$data['name']}}" onchange="" required="{{$data['required']}}">
                           <label class="custom-control custom-checkbox">
                               <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label">Default Checkbox</span>
                           </label>
@@ -46,7 +53,7 @@
                 @if(in_array($data['type'],['select']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
-                      <select id="form_{{$data['name']}}" class="form-control" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}">
+                      <select id="form_{{$data['name']}}" class="form-control" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}" required="{{$data['required']}}">
                         @if(isset($data['model']))
                         @foreach ($data['model']->all() as $key => $value)
                           @if(isset($_GET['parent']) && $value->id == $_GET['parent'])
@@ -73,4 +80,15 @@
       </div>
     </div>
   </div>
+@endsection
+
+@section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('input[type=file]').change(function(){
+        var length = this.files.length;
+        $('.file_preview').append('<img src="'+window.URL.createObjectURL(this.files[length-1])+'" style="width:200px;padding:10px">');
+      });
+    });
+  </script>
 @endsection

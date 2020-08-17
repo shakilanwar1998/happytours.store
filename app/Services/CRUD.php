@@ -42,9 +42,13 @@ class CRUD extends Controller
       $insert_data = [];
       foreach ($this->form as $key => $value) {
         if(in_array($value['type'],['file','upload'])){
-          $file = new File($form_data[$value['name']]);
-          $path = $file->upload();
-          $insert_data[$value['name']] = $path;
+          $files = [];
+          foreach($form_data[$value['name']] as $file_data){
+            $file = new File($file_data);
+            $path = $file->upload();
+            $files[] = $path;
+          }
+          $insert_data[$value['name']] = json_encode($files);
         }
         else{
           $insert_data[$value['name']] = $form_data[$value['name']];

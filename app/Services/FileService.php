@@ -12,7 +12,7 @@ class FileService
 
   public function upload(){
     $path = $this->file->store('public/files/uploads');
-    return "storage/".$path;
+    return str_replace('public','storage',$path);
   }
 
   public function getExtention(){

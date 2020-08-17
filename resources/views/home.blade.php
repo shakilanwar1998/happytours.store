@@ -68,10 +68,13 @@
               </div>
               <div class="row">
                 @foreach($cities as $row)
+                  <?php
+                    $images = json_decode($row->images);
+                  ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="img/destination/1.png" alt="">
+                            <img src="{{url($images[0])}}">
                         </div>
 
                         <div class="content">
