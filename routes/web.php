@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('Home');
-
+Route::get('/search', 'HomeController@search')->name('Home');
 Route::get('/place', function (){
     return view('layouts.places');
 });
