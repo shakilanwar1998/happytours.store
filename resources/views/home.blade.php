@@ -64,14 +64,18 @@
                   </div>
                   <div class="col-lg-9">
                       <div class="search_wrap">
-                          <form class="search_form" action="#">
+
+                          <form class="search_form" method="get" action="{{url('/search')}}">
+                            {{ csrf_field() }}
                               <div class="input_field" style="width:500px">
-                                  <input type="text" placeholder="Where to go?">
+                                <input type="search" class="form-control" name="search"
+                              placeholder="Search users">
                               </div>
                               <div class="search_btn">
                                   <button class="boxed-btn4 " type="submit" >Search</button>
                               </div>
                           </form>
+
                       </div>
                   </div>
               </div>

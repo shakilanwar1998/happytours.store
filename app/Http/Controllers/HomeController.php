@@ -26,4 +26,10 @@ class HomeController extends Controller
         }
         return view('home',$data);
     }
+    public function search(Request $request){
+      $search= $request->get('search');
+      $places = DB::table('places')->where('name','like','%'.$search.'%')->paginate(5);
+      return view('place.search',['places'=>$places]);
+    }
+
 }
