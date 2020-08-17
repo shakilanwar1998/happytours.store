@@ -5,6 +5,7 @@
       .checked {
           color: orange;
       }
+
       </style>
       <!-- slider_area_start -->
       <div class="slider_area">
@@ -14,42 +15,14 @@
                       <div class="row align-items-center">
                           <div class="col-xl-12 col-md-12">
                               <div class="slider_text text-center">
-                                  <h3>Indonesia</h3>
-                                  <p>Pixel perfect design with awesome contents</p>
-                                  <a href="#" class="boxed-btn3">Explore Now</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
-                  <div class="container">
-                      <div class="row align-items-center">
-                          <div class="col-xl-12 col-md-12">
-                              <div class="slider_text text-center">
-                                  <h3>Australia</h3>
-                                  <p>Pixel perfect design with awesome contents</p>
-                                  <a href="#" class="boxed-btn3">Explore Now</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
-                  <div class="container">
-                      <div class="row align-items-center">
-                          <div class="col-xl-12 col-md-12">
-                              <div class="slider_text text-center">
-                                  <h3>Switzerland</h3>
-                                  <p>Pixel perfect design with awesome contents</p>
-                                  <a href="#" class="boxed-btn3">Explore Now</a>
+                                  <h3 style="font-size:78px">Find Places in Google map</h3>
+                                  <a style="margin-top:10%" href="{{url('map')}}" class="boxed-btn3">Find Now</a>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-
       </div>
       <!-- slider_area_end -->
 
@@ -69,7 +42,7 @@
                             {{ csrf_field() }}
                               <div class="input_field" style="width:500px">
                                 <input type="search" class="form-control" name="search"
-                              placeholder="Search users">
+                              placeholder="Search Places">
                               </div>
                               <div class="search_btn">
                                   <button class="boxed-btn4 " type="submit" >Search</button>
@@ -153,7 +126,7 @@
                                     @else
                                     <span class="fa fa-star"></span>
                                     @endif
-                                    
+
                                     @if($value->ratings()>=4)
                                     <span class="fa fa-star checked"></span>
                                     @else

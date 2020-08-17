@@ -178,11 +178,59 @@
                   @endif
 
                 </div>
+
+                {{-- <div class="col-md-3">
+                  <h3>Nearby resturants</h3>
+                      <div class="card-body">
+                          <div class="list-group" id="nearby_resturants">
+                              <a href="#" class="list-group-item"> Cras justo odio </a>
+                          </div>
+                      </div>
+                </div> --}}
             </div>
         </div>
+    </div>
+    <div id="google_map">
+
     </div>
 @endsection
 
 @section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // nearbyHotels();
+      // nearbyResturants();
+    });
 
+    function nearbyResturants(){
+      var map;
+      var map = new google.maps.Map(document.getElementById('google_map'), {
+          center: { lat: 25.276987, lng: 55.296249 },
+          zoom: 15
+      });
+
+      var myPlace = {lat: {{$place->lat}}, lng: {{$place->long}} };
+
+      var service = new google.maps.places.PlacesService(map);
+
+          service.nearbySearch({
+              location : myPlace,
+              radius : 5500,
+              type : [ 'restaurant' ]
+          }, restaurantCallback);
+    }
+
+    function nearbyHotels(){
+
+    }
+
+    function restaurantCallback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                console.log(results[i]);
+            }
+        }
+    }
+
+  </script>
 @endsection

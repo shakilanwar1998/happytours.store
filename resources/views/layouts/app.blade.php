@@ -53,10 +53,9 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="#">home</a></li>
+                                            <li><a class="active" href="/">home</a></li>
                                             <li><a href="#">About</a></li>
                                             <li><a class="" href="#">Destination</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a></li>
                                             <li><a href="#">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -210,6 +209,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{asset('js/mail-script.js')}}"></script>
 
     <script src="{{asset('js/main.js')}}"></script>
+
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true&libraries=places" async defer></script>
+    <script src="{{asset('js/places/gmaps.min.js')}}"></script>
+
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',

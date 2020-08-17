@@ -12,17 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('Home');
 Route::get('/search', 'HomeController@search')->name('Home');
-Route::get('/place', function (){
-    return view('layouts.places');
-});
+Route::get('/map', 'Frontend\\MapsController@getIndex');
 
+Route::post('/submit_review/{id}','PlacesController@submitReview');
 
-Auth::routes();
-
-//
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'HomeController@getIndex')->name('adminHome');
 
@@ -50,6 +47,5 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], fu
 Route::group(['as' => 'places.', 'prefix' => 'places', 'namespace' => 'Frontend'], function () {
     Route::get('/', 'PlacesController@getIndex')->name('places');
     Route::get('/{id}', 'PlacesController@getPlace')->name('place');
-
     Route::post('/submit_review/{id}','PlacesController@submitReview');
 });
