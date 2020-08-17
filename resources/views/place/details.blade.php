@@ -83,7 +83,99 @@
                         {!! $place->description !!}
                     </div>
                     <div class="bordered_1px"></div>
-                    
+                    <div class="comments-area">
+                  <h4>{{$place->reviews->count()}} Reviews</h4>
+                  @foreach ($place->reviews as $key => $value)
+                    <div class="comment-list">
+                       <div class="single-comment justify-content-between d-flex">
+                          <div class="user justify-content-between d-flex">
+                             <div class="thumb">
+
+                             </div>
+                             <div class="desc">
+                                <p class="comment">
+                                   {{$value->comment}}
+                                </p>
+
+                                  @if($value->rating_stars>=1)
+                                  <span class="fa fa-star checked"></span>
+                                  @else
+                                  <span class="fa fa-star"></span>
+                                  @endif
+
+                                  @if($value->rating_stars>=2)
+                                  <span class="fa fa-star checked"></span>
+                                  @else
+                                  <span class="fa fa-star"></span>
+                                  @endif
+
+                                  @if($value->rating_stars>=3)
+                                  <span class="fa fa-star checked"></span>
+                                  @else
+                                  <span class="fa fa-star"></span>
+                                  @endif
+
+                                  @if($value->rating_stars>=4)
+                                  <span class="fa fa-star checked"></span>
+                                  @else
+                                  <span class="fa fa-star"></span>
+                                  @endif
+
+                                  @if($value->rating_stars>=5)
+                                  <span class="fa fa-star checked"></span>
+                                  @else
+                                  <span class="fa fa-star"></span>
+                                  @endif
+
+                                <div class="d-flex justify-content-between">
+                                   <div class="d-flex align-items-center">
+                                      <h5>
+                                         <a href="#">{{$value->user->name}}</a>
+                                      </h5>
+                                      <p class="date">{{date('m/d/Y H:i:s',strtotime($value->created_at))}}</p>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  @endforeach
+               </div>
+
+                    @if(\Auth::Id())
+                    <div class="contact_join">
+                        <h3>Write a Review</h3>
+                        <form action="{{url('places/submit_review/'.$place->id)}}" method="post">
+                          @csrf
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="single_input">
+                                        <textarea cols="30" rows="10"placeholder="Message" name="comment"></textarea>
+                                    </div>
+                                    <div class="rating">
+                                        <input type="radio" name="rating" value="5" id="5">
+                                        <label for="5">☆</label>
+                                        <input type="radio" name="rating" value="4" id="4">
+                                        <label for="4">☆</label>
+                                        <input type="radio" name="rating" value="3" id="3">
+                                        <label for="3">☆</label>
+                                        <input type="radio" name="rating" value="2" id="2">
+                                        <label for="2">☆</label>
+                                        <input type="radio" name="rating" value="1" id="1">
+                                        <label for="1">☆</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn4" type="submit">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  @else
+                    Please <a style="color:blue" href="{{route('login')}}">Login</a> to write a review
+                  @endif
 
                 </div>
             </div>
