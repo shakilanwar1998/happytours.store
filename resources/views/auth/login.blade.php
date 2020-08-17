@@ -60,7 +60,7 @@
                   <span class="txt2 p-b-10" style="color:black">
                   Don’t have an account?
                   </span>
-                  <a href="#" class="txt3 bo1 hov1" style="color:#040A73">
+                  <a href="{{route('register')}}" class="txt3 bo1 hov1" style="color:#040A73">
                     Sign up now
                   </a>
               </div>

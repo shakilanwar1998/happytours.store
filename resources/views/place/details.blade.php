@@ -1,5 +1,49 @@
 @extends('layouts.app')
 @section('content')
+
+    <style media="screen">
+    .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+    }
+
+    .rating>input {
+        display: none
+    }
+
+    .rating>label {
+        position: relative;
+        width: 1em;
+        font-size: 3vw;
+        color: #FFD600;
+        cursor: pointer
+    }
+
+    .rating>label::before {
+        content: "\2605";
+        position: absolute;
+        opacity: 0
+    }
+
+    .rating>label:hover:before,
+    .rating>label:hover~label:before {
+        opacity: 1 !important
+    }
+
+    .rating>input:checked~label:before {
+        opacity: 1
+    }
+
+    .rating:hover>input:checked~label:before {
+        opacity: 0.4
+    }
+
+    .checked {
+        color: orange;
+    }
+
+    </style>
     <div class="destination_banner_wrap overlay">
         <div class="destination_text text-center">
             <h3>{{$place->name}}</h3>
@@ -39,36 +83,14 @@
                         {!! $place->description !!}
                     </div>
                     <div class="bordered_1px"></div>
-                    <div class="contact_join">
-                        <h3>Write a Review</h3>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="single_input">
-                                        <input type="text" placeholder="Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="single_input">
-                                        <input type="text" placeholder="Phone no.">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="single_input">
-                                        <textarea name="" id="" cols="30" rows="10"placeholder="Message" ></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="submit_btn">
-                                        <button class="boxed-btn4" type="submit">submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                    
 
+                </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+
 @endsection

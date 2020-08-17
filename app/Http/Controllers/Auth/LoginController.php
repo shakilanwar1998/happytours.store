@@ -32,7 +32,7 @@ class LoginController extends Controller
       if ( $user->role == 1){
         return redirect('admin');
       }
-      return redirect('/home');
+      return redirect('/');
     }
 
     /**

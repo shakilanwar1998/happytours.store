@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
+      <style media="screen">
+      .checked {
+          color: orange;
+      }
+      </style>
       <!-- slider_area_start -->
       <div class="slider_area">
           <div class="slider_active owl-carousel">
@@ -127,12 +132,36 @@
                               <p>{{$value->city->name}}</p>
                               <div class="rating_days d-flex justify-content-between">
                                   <span class="d-flex justify-content-center align-items-center">
-                                       <i class="fa fa-star"></i>
-                                       <i class="fa fa-star"></i>
-                                       <i class="fa fa-star"></i>
-                                       <i class="fa fa-star"></i>
-                                       <i class="fa fa-star"></i>
-                                       <a href="#">({{$value->reviews->count()}} Review)</a>
+                                    @if($value->ratings()>=1)
+                                    <span class="fa fa-star checked"></span>
+                                    @else
+                                    <span class="fa fa-star"></span>
+                                    @endif
+
+                                    @if($value->ratings()>=2)
+                                    <span class="fa fa-star checked"></span>
+                                    @else
+                                    <span class="fa fa-star"></span>
+                                    @endif
+
+                                    @if($value->ratings()>=3)
+                                    <span class="fa fa-star checked"></span>
+                                    @else
+                                    <span class="fa fa-star"></span>
+                                    @endif
+                                    
+                                    @if($value->ratings()>=4)
+                                    <span class="fa fa-star checked"></span>
+                                    @else
+                                    <span class="fa fa-star"></span>
+                                    @endif
+
+                                    @if($value->ratings()>=5)
+                                    <span class="fa fa-star checked"></span>
+                                    @else
+                                    <span class="fa fa-star"></span>
+                                    @endif
+                                    <a href="#">({{$value->reviews->count()}} Review)</a>
                                   </span>
                               </div>
                           </div>
