@@ -9,6 +9,7 @@ use App\Services\FileService as File;
 class CRUD extends Controller
 {
     public $model;
+    public $sub_module = null;
     public $form = [];
 
     public function __construct()
@@ -19,6 +20,7 @@ class CRUD extends Controller
     public function getIndex(){
       $this->init();
       $this->data['results'] = $this->model->all();
+      $this->data['sub_module'] = $this->sub_module;
       return view('admin.layouts.index',$this->data);
     }
 

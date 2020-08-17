@@ -31,7 +31,7 @@
                   </div>
                 @endif
 
-                @if(in_array($data['type'],['select']))
+                @if(in_array($data['type'],['checkbox']))
                   <div class="form-group">
                       <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
                       <div class="custom-file">
@@ -40,6 +40,23 @@
                               <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label">Default Checkbox</span>
                           </label>
                       </div>
+                  </div>
+                @endif
+
+                @if(in_array($data['type'],['select']))
+                  <div class="form-group">
+                      <label for="form_{{$data['name']}}" class="col-form-label">{{$data['label']}}</label>
+                      <select id="form_{{$data['name']}}" class="form-control" name="{{$data['name']}}" placeholder="Please enter {{$data['label']}}">
+                        @if(isset($data['model']))
+                        @foreach ($data['model']->all() as $key => $value)
+                          @if(isset($_GET['parent']) && $value->id == $_GET['parent'])
+                            <option value="{{$value->id}}" selected>{{$value->name}}</option>
+                          @else
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                          @endif
+                        @endforeach
+                        @endif
+                      </select>
                   </div>
                 @endif
 

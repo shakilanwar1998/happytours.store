@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
-      'name'
+      'name',
+      'country_id',
+      'lat',
+      'long',
+      'images'
     ];
 
     public function places(){

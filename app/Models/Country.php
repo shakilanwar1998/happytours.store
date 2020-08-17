@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
     protected $fillable = [
-      'name'
+      'name',
+      'lat',
+      'long',
+      'images'
     ];
 
     public function cities(){

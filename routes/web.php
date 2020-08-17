@@ -23,6 +23,8 @@ Route::post('/submit_review/{id}','PlacesController@submitReview');
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'HomeController@getIndex')->name('adminHome');
 
+    Route::get('/dashboard', 'DashboardController@getIndex')->name('dashboard');
+
     Route::group(['as' => 'countries.', 'prefix' => 'countries', 'namespace' => 'Countries'], function () {
         Route::get('/', 'CountriesController@getIndex')->name('countries');
         Route::get('/add', 'CountriesController@getAdd')->name('countriesAdd');
@@ -39,6 +41,15 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], fu
         Route::get('/delete/{id}', 'PlacesController@getDelete')->name('placesDelete');
         Route::post('/add/save', 'PlacesController@create')->name('placesAddSave');
         Route::post('/edit/{id}/save', 'PlacesController@update')->name('placesEditSave');
+    });
+
+    Route::group(['as' => 'cities.', 'prefix' => 'cities', 'namespace' => 'Cities'], function () {
+        Route::get('/', 'CitiesController@getIndex')->name('cities');
+        Route::get('/add', 'CitiesController@getAdd')->name('citiesAdd');
+        Route::get('/edit/{id}', 'CitiesController@getEdit')->name('citiesEdit');
+        Route::get('/delete/{id}', 'CitiesController@getDelete')->name('citiesDelete');
+        Route::post('/add/save', 'CitiesController@create')->name('citiesAddSave');
+        Route::post('/edit/{id}/save', 'CitiesController@update')->name('citiesEditSave');
     });
 
 });

@@ -49,23 +49,34 @@
       <div class="sidebar">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Settings
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview" style="display: none;">
-              <li class="nav-item">
-                <a href="{{route('admin.countries.countries')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Countries</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+
+            <li class="nav-item">
+              <a href="{{route('admin.dashboard')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('admin.countries.countries')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Countries</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('admin.cities.cities')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cities</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('admin.places.places')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Places</p>
+              </a>
+            </li>
 
           </ul>
         </nav>

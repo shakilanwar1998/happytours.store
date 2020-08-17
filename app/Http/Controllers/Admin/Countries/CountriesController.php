@@ -14,5 +14,8 @@ class CountriesController extends CRUD
       $this->form[] = ["label" => "Country Name", "name" => "name", "type" => "text", "required" => true];
       $this->form[] = ["label" => "Latitude", "name" => "lat", "type" => "text", "required" => true];
       $this->form[] = ["label" => "Longitude", "name" => "long", "type" => "text", "required" => true];
+      $this->form[] = ["label" => "Images", "name" => "image", "type" => "upload", "required" => true];
+
+      $this->sub_module = "cities";
     }
 }

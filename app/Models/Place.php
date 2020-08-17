@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 class Place extends Model
 {
     protected $fillable = [
-      'name'
+      'name',
+      'city_id',
+      'lat',
+      'long',
+      'images'
     ];
 
     public function city()

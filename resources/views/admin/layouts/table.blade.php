@@ -26,6 +26,9 @@
                     <td scope="col">{{$row->$column}}</td>
                   @endforeach
                   <td>
+                    @if($sub_module)
+                      <a href="{{url("admin/".$sub_module."/add?parent=".$row->id)}}"><button type="button" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Add {{$sub_module}}</button></a>
+                    @endif
                     <a href="{{url()->current().'/details/'.$row->id}}"><button type="button" class="btn btn-primary btn-xs"><i class="far fa-eye"></i></button></a>
                     <a href="{{url()->current().'/edit/'.$row->id}}"><button type="button" class="btn btn-success btn-xs"><i class="fas fa-edit"></i></button></a>
                     <a href="{{url()->current().'/delete/'.$row->id}}"><button type="button" class="btn btn-danger btn-xs"><i class="far fa-trash-alt"></i></button></a>
