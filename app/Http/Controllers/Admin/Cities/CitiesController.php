@@ -11,8 +11,8 @@ class CitiesController extends CRUD
 {
   public function init(){
     $this->model = new City();
-    $this->data['page_title'] = "Countries";
-    $this->data['table_columns'] = ['Country Name' => 'name'];
+    $this->data['page_title'] = "Cities";
+    $this->data['table_columns'] = ['City Name' => 'name','Latitude' => 'lat','Longitude' => 'long'];
 
     $this->form = [];
     $this->form[] = ["label" => "City Name", "name" => "name", "type" => "text", "required" => true];

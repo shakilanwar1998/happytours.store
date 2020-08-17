@@ -74,7 +74,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="{{url($images[0])}}">
+                            <img style="height:220px;" src="{{url($images[0])}}">
                         </div>
 
                         <div class="content">
@@ -102,10 +102,13 @@
               <div class="row">
 
                 @foreach ($popular_places as $key => $value)
+                  <?php
+                    $images = json_decode($value->images);
+                  ?>
                   <div class="col-lg-4 col-md-6">
                       <div class="single_place">
                           <div class="thumb">
-                              <img src="img/place/1.png" alt="">
+                              <img style="height:220px;" src="{{url($images[0])}}">
                           </div>
                           <div class="place_info">
                               <a href="{{url('places/'.$value->id)}}"><h3>{{$value->name}}</h3></a>
