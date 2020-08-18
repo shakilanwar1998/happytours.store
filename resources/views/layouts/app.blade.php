@@ -238,7 +238,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="{{asset('js/main.js')}}"></script>
 
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true" async defer></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true"></script>
     <script src="{{asset('js/places/gmaps.min.js')}}"></script>
 
     <script>
