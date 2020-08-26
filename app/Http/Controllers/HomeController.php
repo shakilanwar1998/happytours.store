@@ -33,17 +33,4 @@ class HomeController extends Controller
       return view('place.search',['places'=>$places]);
     }
 
-    public function place($id)
-    {
-      $data['place'] = Place::get()->sortBy(function($places){
-        return $places->ratings();
-      })->take(5);
-
-      foreach($data['place'] as $key => $value)
-      {
-        $data['place'][$key] = Place::find($id);
-      }
-      return view('place.all_places',$data);
-    }
-
 }
