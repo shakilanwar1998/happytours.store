@@ -23,7 +23,7 @@
               <tr>
                   <th scope="row">1</th>
                   @foreach($table_columns as $key => $column)
-                    <td scope="col">{{$row->$column}}</td>
+                    <td scope="col">{{$row->$column}}</td> 
                   @endforeach
                   <td>
                     @if($sub_module)

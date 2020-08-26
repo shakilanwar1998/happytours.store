@@ -32,6 +32,7 @@ class HomeController extends Controller
       $data['places'] = Place::where('name','like','%'.$search.'%')->get();
       return view('place.searched_places',$data);
     }
+
     public function place($id)
     {
       $data['place'] = Place::get()->sortBy(function($places){

@@ -11,7 +11,7 @@
             </div>
         </div>
          <div class="row">
-           @foreach ($place as $key => $value)
+           @foreach ($places as $key => $value)
              <?php
                $images = json_decode($value->images);
              ?>

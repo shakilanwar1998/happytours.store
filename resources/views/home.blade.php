@@ -79,7 +79,7 @@
 
                         <div class="content">
                                <p class="d-flex align-items-center"> <a href="">{{ $value->name }}</a>
-                             <a href="{{url('place/'.$value->id)}}">{{ $value->places->count() }} Places</a> </p>
+                             <a href="{{url('city/places/'.$value->id)}}">{{ $value->places->count() }} Places</a> </p>
 
                         </div>
                     </div>
