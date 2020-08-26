@@ -29,10 +29,9 @@ class HomeController extends Controller
     }
     public function search(Request $request){
       $search= $request->get('search');
-      $places = DB::table('places')->where('name','like','%'.$search.'%')->paginate(5);
-      return view('place.search',['places'=>$places]);
+      $data['places'] = Place::where('name','like','%'.$search.'%')->get();
+      return view('place.searched_places',$data);
     }
-
     public function place($id)
     {
       $data['place'] = Place::get()->sortBy(function($places){
