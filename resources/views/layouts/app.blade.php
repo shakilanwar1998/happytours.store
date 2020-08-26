@@ -238,7 +238,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="{{asset('js/main.js')}}"></script>
 
+<<<<<<< HEAD
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true&libraries=places" async defer></script>
+=======
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true"></script>
+>>>>>>> 122b881391100614aea542b54b65e67f84aa8736
     <script src="{{asset('js/places/gmaps.min.js')}}"></script>
 
     <script>

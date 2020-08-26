@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
+  <?php
+    $images = json_decode($place->images);
+  ?>
     <style media="screen">
     .rating {
     display: flex;
@@ -42,7 +44,10 @@
     .checked {
         color: orange;
     }
-
+    .destination_banner_wrap{
+      background-image: url('{{url($images[0])}}') !important;
+      padding: 100px 0 !important;
+    }
     </style>
     <div class="destination_banner_wrap overlay">
         <div class="destination_text text-center">
