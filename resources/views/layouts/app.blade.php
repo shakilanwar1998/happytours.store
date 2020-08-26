@@ -58,33 +58,33 @@
                                             <li><a class="" href="#">Destination</a></li>
                                             <li><a href="#">Contact</a></li>
                                             @guest
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                            </li>
-                                            @if (Route::has('register'))
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                                </li>
-                                            @endif
-                                        @else
-                                            <li class="nav-item dropdown">
-                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                                </a>
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                          </li>
+                                          @if (Route::has('register'))
+                                              <li class="nav-item">
+                                                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                              </li>
+                                          @endif
+                                      @else
+                                          <li class="nav-item dropdown">
+                                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                  {{ Auth::user()->name }} <span class="caret"></span>
+                                              </a>
 
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                                       onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
-                                                        {{ __('Logout') }}
-                                                    </a>
+                                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                  <a class="dropdown-item" href="{{ route('logout') }}"
+                                                     onclick="event.preventDefault();
+                                                                   document.getElementById('logout-form').submit();">
+                                                      {{ __('Logout') }}
+                                                  </a>
 
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        @endguest
+                                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                      @csrf
+                                                  </form>
+                                              </div>
+                                          </li>
+                                      @endguest
                                         </ul>
                                     </nav>
                                 </div>
@@ -238,7 +238,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="{{asset('js/main.js')}}"></script>
 
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true" async defer></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0&amp;sensor=true&libraries=places" async defer></script>
     <script src="{{asset('js/places/gmaps.min.js')}}"></script>
 
     <script>

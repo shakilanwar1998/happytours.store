@@ -16,6 +16,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('Home');
 Route::get('/search', 'HomeController@search')->name('Home');
+
+Route::get('place/{id}', 'HomeController@place')->name('Home');
+
 Route::get('/map', 'Frontend\\MapsController@getIndex');
 
 Route::post('/submit_review/{id}','PlacesController@submitReview');

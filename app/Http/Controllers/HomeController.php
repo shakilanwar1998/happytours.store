@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Place;
 use App\Models\City;
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -30,6 +31,19 @@ class HomeController extends Controller
       $search= $request->get('search');
       $places = DB::table('places')->where('name','like','%'.$search.'%')->paginate(5);
       return view('place.search',['places'=>$places]);
+    }
+
+    public function place($id)
+    {
+      $data['place'] = Place::get()->sortBy(function($places){
+        return $places->ratings();
+      })->take(5);
+
+      foreach($data['place'] as $key => $value)
+      {
+        $data['place'][$key] = Place::find($id);
+      }
+      return view('place.all_places',$data);
     }
 
 }

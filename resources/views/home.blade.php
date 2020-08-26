@@ -67,9 +67,9 @@
                   </div>
               </div>
               <div class="row">
-                @foreach($cities as $row)
+                @foreach($cities as $key => $value)
                   <?php
-                    $images = json_decode($row->images);
+                    $images = json_decode($value->images);
                   ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
@@ -78,8 +78,8 @@
                         </div>
 
                         <div class="content">
-                               <p class="d-flex align-items-center"> <a href="">{{ $row->name }}</a>
-                             <a href="#">{{ $row->places->count() }} Places</a> </p>
+                               <p class="d-flex align-items-center"> <a href="">{{ $value->name }}</a>
+                             <a href="{{url('place/'.$value->id)}}">{{ $value->places->count() }} Places</a> </p>
 
                         </div>
                     </div>
